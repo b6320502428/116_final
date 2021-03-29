@@ -12,7 +12,7 @@ int main ()
             scanf("%d",&ara[i][j]);
         }
     }
-    /*(i=0; i<n[1]; i++)
+    for(i=0; i<n[1]; i++)
     {
         for(j=0; j<n[1]; j++)
         {
@@ -27,7 +27,7 @@ int main ()
 
             scanf("%d",&arc[i][j]);
         }
-    }*/
+    }
     i=0;
     tmp=0;
     cor=0;
@@ -61,6 +61,86 @@ int main ()
         }
     }
     if(cor==2*n[0])
+    {
+        printf("no");
+    }
+    else
+    {
+        printf("yes");
+    }
+    i=0;
+    tmp=0;
+    cor=0;
+    for(j=0; j<n[1]; j++)
+    {
+        tmp+=arb[i][j];
+    }
+    ch=tmp;
+    for(i=0; i<n[1]; i++)
+    {
+        tmp=0;
+        for(j=0; j<n[1]; j++)
+        {
+            tmp+=arb[i][j];
+        }
+        if(ch==tmp)
+        {
+            cor++;
+        }
+    }
+    for(i=0; i<n[1]; i++)
+    {
+        tmp=0;
+        for(j=0; j<n[1]; j++)
+        {
+            tmp+=arb[j][i];
+        }
+        if(ch==tmp)
+        {
+            cor++;
+        }
+    }
+    if(cor==2*n[1])
+    {
+        printf("no");
+    }
+    else
+    {
+        printf("yes");
+    }
+    i=0;
+    tmp=0;
+    cor=0;
+    for(j=0; j<n[2]; j++)
+    {
+        tmp+=arc[i][j];
+    }
+    ch=tmp;
+    for(i=0; i<n[2]; i++)
+    {
+        tmp=0;
+        for(j=0; j<n[2]; j++)
+        {
+            tmp+=arc[i][j];
+        }
+        if(ch==tmp)
+        {
+            cor++;
+        }
+    }
+    for(i=0; i<n[2]; i++)
+    {
+        tmp=0;
+        for(j=0; j<n[2]; j++)
+        {
+            tmp+=arc[j][i];
+        }
+        if(ch==tmp)
+        {
+            cor++;
+        }
+    }
+    if(cor==2*n[2])
     {
         printf("no");
     }
