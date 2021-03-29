@@ -3,39 +3,70 @@ int main ()
 {
     int n[3],i,j,k,ch,cor,tmp;
     scanf("%d %d %d",&n[0],&n[1],&n[2]);
-    int arr[k][i][j];
-    for(k=0; k<3; k++)
+    int ara[n[0]][n[0]],arb[n[1]][n[1]],arc[n[2]][n[2]];
+    for(i=0; i<n[0]; i++)
     {
-        for(i=0; i<n[k]; i++)
+        for(j=0; j<n[0]; j++)
         {
-            for(j=0; j<n[k]; j++)
-            {
-                scanf("%d",&arr[k][i][j]);
-            }
+
+            scanf("%d",&ara[i][j]);
         }
     }
-    for(k=0; k<3; k++)
+    /*(i=0; i<n[1]; i++)
     {
-        i=0;
+        for(j=0; j<n[1]; j++)
+        {
+
+            scanf("%d",&arb[i][j]);
+        }
+    }
+    for(i=0; i<n[2]; i++)
+    {
+        for(j=0; j<n[2]; j++)
+        {
+
+            scanf("%d",&arc[i][j]);
+        }
+    }*/
+    i=0;
+    tmp=0;
+    cor=0;
+    for(j=0; j<n[0]; j++)
+    {
+        tmp+=ara[i][j];
+    }
+    ch=tmp;
+    for(i=0; i<n[0]; i++)
+    {
         tmp=0;
-        cor=0;
-        for(j=0; j<n[k]; j++)
+        for(j=0; j<n[0]; j++)
         {
-            tmp+=arr[k][i][j];
+            tmp+=ara[i][j];
         }
-        ch=tmp;
-        for(i=0; i<n[k]; i++)
+        if(ch==tmp)
         {
-            tmp=0;
-            for(j=0; j<n[k]; j++)
-            {
-                tmp+=arr[k][i][j];
-            }
-            if(ch==tmp)
-            {
-                cor++;
-            }
+            cor++;
         }
+    }
+    for(i=0; i<n[0]; i++)
+    {
+        tmp=0;
+        for(j=0; j<n[0]; j++)
+        {
+            tmp+=ara[j][i];
+        }
+        if(ch==tmp)
+        {
+            cor++;
+        }
+    }
+    if(cor==2*n[0])
+    {
+        printf("no");
+    }
+    else
+    {
+        printf("yes");
     }
     return 0;
 }
