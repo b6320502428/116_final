@@ -1,28 +1,40 @@
 #include <stdio.h>
 int main ()
 {
-    int a,b,c,i,j;
-    scanf("%d %d %d",&a,&b,&c);
-    int ara[a][a],arb[b][b],arc[c][c];
-    for(i=0; i<a; i++)
+    int n[3],i,j,k,ch,cor,tmp;
+    scanf("%d %d %d",&n[0],&n[1],&n[2]);
+    int arr[k][i][j];
+    for(k=0; k<3; k++)
     {
-        for(j=0; j<a; j++)
+        for(i=0; i<n[k]; i++)
         {
-            scanf("%d",&ara[i][j]);
+            for(j=0; j<n[k]; j++)
+            {
+                scanf("%d",&arr[k][i][j]);
+            }
         }
     }
-    for(i=0; i<b; i++)
+    for(k=0; k<3; k++)
     {
-        for(j=0; j<b; j++)
+        i=0;
+        tmp=0;
+        cor=0;
+        for(j=0; j<n[k]; j++)
         {
-            scanf("%d",&arb[i][j]);
+            tmp+=arr[k][i][j];
         }
-    }
-    for(i=0; i<c; i++)
-    {
-        for(j=0; j<c; j++)
+        ch=tmp;
+        for(i=0; i<n[k]; i++)
         {
-            scanf("%d",&arc[i][j]);
+            tmp=0;
+            for(j=0; j<n[k]; j++)
+            {
+                tmp+=arr[k][i][j];
+            }
+            if(ch==tmp)
+            {
+                cor++;
+            }
         }
     }
     return 0;
