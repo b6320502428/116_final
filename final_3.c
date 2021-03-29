@@ -60,13 +60,31 @@ int main ()
             cor++;
         }
     }
-    if(cor==2*n[0])
+    tmp=0;
+    for(j=0; j<n[0]; j++)
     {
-        printf("no");
+        tmp+=ara[j][j];
+    }
+    if(ch==tmp)
+    {
+        cor++;
+    }
+    tmp=0;
+    for(j=0; j<n[0]; j++)
+    {
+        tmp+=ara[j][n[0]-j-1];
+    }
+    if(ch==tmp)
+    {
+        cor++;
+    }
+    if(cor==(2*n[0])+2)
+    {
+        printf("no\n");
     }
     else
     {
-        printf("yes");
+        printf("yes\n");
     }
     i=0;
     tmp=0;
@@ -100,13 +118,31 @@ int main ()
             cor++;
         }
     }
-    if(cor==2*n[1])
+    tmp=0;
+    for(j=0; j<n[1]; j++)
     {
-        printf("no");
+        tmp+=arb[j][j];
+    }
+    if(ch==tmp)
+    {
+        cor++;
+    }
+    tmp=0;
+    for(j=0; j<n[1]; j++)
+    {
+        tmp+=arb[j][n[1]-j-1];
+    }
+    if(ch==tmp)
+    {
+        cor++;
+    }
+    if(cor==(2*n[1])+2)
+    {
+        printf("no\n");
     }
     else
     {
-        printf("yes");
+        printf("yes\n");
     }
     i=0;
     tmp=0;
@@ -140,13 +176,31 @@ int main ()
             cor++;
         }
     }
-    if(cor==2*n[2])
+    tmp=0;
+    for(j=0; j<n[2]; j++)
     {
-        printf("no");
+        tmp+=arc[j][j];
+    }
+    if(ch==tmp)
+    {
+        cor++;
+    }
+    tmp=0;
+    for(j=0; j<n[2]; j++)
+    {
+        tmp+=arc[j][n[2]-j-1];
+    }
+    if(ch==tmp)
+    {
+        cor++;
+    }
+    if(cor==(2*n[2])+2)
+    {
+        printf("no\n");
     }
     else
     {
-        printf("yes");
+        printf("yes\n");
     }
     return 0;
 }
