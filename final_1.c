@@ -5,7 +5,7 @@ int main ()
     int n,k,ch=0,i;
     char c[2],ks[7];
     scanf("%d %s",&n,c);
-    for(k=n; 1; k++)
+    for(k=n+1; 1; k++)
     {
         sprintf(ks,"%d",k);
         for(i=0; i<strlen(ks); i++)
@@ -15,6 +15,15 @@ int main ()
                 ch=1;
             }
         }
+        if(ch==1)
+        {
+            break;
+        }
+        else
+        {
+            strcpy(ks,"");
+        }
     }
+    printf("%d",k);
     return 0;
 }
